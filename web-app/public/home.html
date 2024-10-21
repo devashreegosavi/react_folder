@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .login-form{
+            border: 1px solid gray;
+            padding : 10px;
+            box-shadow: 2px 2px 2px;
+            width: 300px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border: 1px solid gray;
+            font-family: Arial;
+            margin-bottom: 20px;
+        }
+        .brand-title{
+            font-style: 20px;
+            font-weight: bold;
+        }
+        nav span{
+            margin-right: 30px;
+            font-size:20px;
+        }
+        
+    </style>
+    <!--<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <script type="text/babel">
+
+        function Navbar(){
+            return(
+                <nav>
+                    <div className="brand-title">shopper</div>    
+                    <div>
+                        <span>Home</span>    
+                        <span>Shop</span>    
+                        <span>Docs</span>    
+                        <span>Pages</span>    
+                    </div>
+                    <div>
+                        <button>Sign In</button>    
+                    </div>
+                </nav>
+            )
+        }
+        function Login(){
+            return(
+                <div>
+                    <form className="login-form">
+                        <h1>User login</h1>
+                        <dl>
+                            <dt>Username</dt>    
+                            <dd><input type="text"></input></dd>
+                            <dt>Password</dt>
+                            <dd><input type="password"></input></dd>
+                        </dl>
+                    </form>
+                </div>
+            )
+        }
+        //ReactDOM.render("Welcome",document.getElementById("root")) /*creating virtual DOM */
+        //ReactDOM.render(<Login></Login>,document.getElementById("root"))
+        ReactDOM.render(<section><Navbar/><Login></Login></section>,document.getElementById("root"))
+    </script>
+</head>
+<body>
+    <noscript>Please enabled javascript</noscript>
+    <div id="root"></div> <!-- virtual DOM render component here -->
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .women-fashion{
+            background-image: url("images/wimg.jfif");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .men-fashion{
+            background-image: url("images/mimg.jfif");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .kids-fashion{
+            background-image: url("images/kimg.jpg");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        main{
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+            height: 450px;
+        }
+        .main-title{
+            font-size: 40px;
+            color: white;
+            font-family:Arial;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px black;
+        }
+    </style>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="text/babel">
+        function ShopperIndex(){
+            return(
+                <div>
+                    <ShopperHeader />    
+                    <ShopperArticle />
+                    <ShopperMain />
+                </div>
+            );
+        }
+        function ShopperHeader(){
+            return(
+                <header className="d-flex justify-content-between p-3">
+                    <div className="fs-4 fw-bold">Shopper.</div>    
+                    <nav>
+                        <span className="mx-3 fs-5">Home</span>   
+                        <span className="mx-3 fs-5">Pages</span>   
+                        <span className="mx-3 fs-5">Shops</span>   
+                        <span className="mx-3 fs-5">Docs</span>   
+                        <span className="mx-3 fs-5">Blogs</span>    
+                    </nav>
+                    <div className="fs-5">
+                        <span className="bi bi-heart"></span>   
+                        <span className="bi bi-person mx-2"></span>   
+                        <span className="bi bi-cart position-relative d-inline-block"><span className="badge position-absoloute d-inline-block bg-danger rounded rounded-circle">2</span></span>    
+                    </div>
+                </header>
+            );
+        }
+        function ShopperArticle(){
+            return(
+                <article className="bg-dark text-white p-2 text-center">
+                    <span className="bi bi-lightning-fill text-warning"></span> 
+                    <span>Happy Holiday Deals on everything</span>
+                    <span className="bi bi-lightning-fill text-warning"></span> 
+                </article>
+            )
+        }
+        function ShopperMain(){
+            return(
+                <main className="mt-2">
+                    <div className="women-fashion">
+                        <div className="main-title">Women</div>
+                        <button className="btn btn-light">Shop Women<span className="bi bi-arrow-right"></span></button>
+                    </div>    
+                    <div className="men-fashion">
+                        <div className="main-title">Men</div>
+                        <button className="btn btn-light">Shop Men<span className="bi bi-arrow-right"></span></button>
+                    </div> 
+                    <div className="kids-fashion">
+                        <div className="main-title">Kids</div>
+                        <button className="btn btn-light">Shop Kids<span className="bi bi-arrow-right"></span></button>
+                    </div> 
+                </main>
+            )
+        }
+
+        ReactDOM.render(<ShopperIndex></ShopperIndex>,document.getElementById("root"))
+    </script>
+</head>
+<body class="container-fluid">
+    <noscript>Please enabled javascript</noscript>
+    <div id="root"></div>
+</body>
+</html>
